@@ -46,7 +46,7 @@ const displayData = (phones, dataLimit) => {
                         <h2 class="card-title">${phone.phone_name}</h2>
                         <p>Brand: ${phone.brand}</p>
                         <div class="card-actions justify-end">
-                            <button class="btn btn-primary rounded-md">Buy Now</button>
+                        <label onclick = "loadingDetails('${phone.slug}')" for="my-modal-5" class="btn rounded-md">See Details</label>
                         </div>
                     </div>
         `
@@ -68,11 +68,13 @@ const process = (dataLimit) => {
 
 // Clicked handler
 document.getElementById('search').addEventListener('click', () => {
+
     process(10)
 })
 
 // Press handler
 document.getElementById('search-field').addEventListener("keypress", (e) => {
+
     if (e.key == 'Enter') {
         process(10)
     }
@@ -94,4 +96,28 @@ const loading = isLoad => {
     } else {
         loader.classList.add = 'hidden'
     }
+}
+
+// load Phone Details
+
+const loadingDetails = async id => {
+    const url = `https://openapi.programming-hero.com/api/phone/${id}`;
+    const res = await fetch(url)
+    const data = await res.json()
+    displayDetails(data);
+}
+
+// Display phone details
+const displayDetails = phone => {
+    console.log(phone);
+    const title = document.getElementById('m-title')
+    title.innerText = phone.data.name
+
+    const feature = document.getElementById('feature-container')
+
+    feature.innerHTML = `
+    <li>Chip Set: ${phone.data.mainFeatures.chipSet}</li>
+    <li>Display Size: ${phone.data.mainFeatures.displaySize}</li>
+    <li>Memory: ${phone.data.mainFeatures.memory}</li>
+    `
 }
