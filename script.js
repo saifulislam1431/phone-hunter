@@ -6,7 +6,7 @@ const getData = (id, dataLimit) => {
         .then(data => displayData(data.data, dataLimit))
         .catch(error => console.log(error))
 
-    document.getElementById('search-field').value = ''
+
 }
 
 // Display data
