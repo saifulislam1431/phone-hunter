@@ -22,8 +22,12 @@
             <div class="navbar-end">
                 <input type="text" placeholder="Search a phone" class="p-1 rounded-md bg-slate-400 placeholder:text-slate-800 font-medium  text-slate-700" id="search-field">
                 <button class="btn btn-ghost btn-circle" id="search">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-              </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -31,40 +35,35 @@
             <h1> Search <span class="text-orange-400 uppercase">big</span> and <span class="text-orange-400 uppercase">bigger!!</span></h1>
         </div>
     </header>
+
+
     <main>
         <section id="loading" class="flex justify-center items-center hidden">
 
             <div class="radial-progress bg-primary text-primary-content border-4 border-primary animate-spin  mt-80" style="--value:70;"></div>
         </section>
 
+
         <section id="main-body">
-
-            <div id="phn-container" class="grid gap-6 grid-cols-2 lg:grid-cols-4 p-10">
-                <div class="card w-96 bg-base-100 shadow-md shadow-emerald-100 bg-slate-300 text-slate-800 mr-5 ">
-                    <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-primary rounded-md">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
+            <div id="phn-container" class="grid gap-6 grid-cols-2 lg:grid-cols-4  mt-5 md:p-10">
 
             </div>
+        </section>
 
-
+        <section id="no-phn" class="hidden">
+            <div class="flex justify-center items-center">
+                <div class="card w-96 bg-primary text-primary-content">
+                    <div class="card-body">
+                        <h2 class=" text-2xl font-bold text-red-600 text-center">Not Found!!!</h2>
+                        <p class="text-lg text-center font-semibold">Please search again.</p>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
 
-
-
-        <section id="show-all" class="flex justify-center items-center mt-8 hidden">
+        <section id="show-all" class="flex justify-center items-center hidden mt-8 ">
             <button id="show-all-btn" class="btn btn-wide bg-slate-200 rounded-lg text-slate-800 hover:bg-slate-400">Show All</button>
 
         </section>
